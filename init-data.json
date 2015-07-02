@@ -1,0 +1,12 @@
+[
+  {
+    "model": "sysadmin.MyUser",
+    "pk": 1,
+    "fields": {
+      "first_name": "Admin",
+      "last_name": "User",
+      "username": "admin",
+      "password": "pbkdf2_sha256$20000$fkblGT3kGNhr$4IEGMItHLjpEbE7aC0DeeD9LwzClUjY2SD43xEsvuIA="
+    }
+  }
+]

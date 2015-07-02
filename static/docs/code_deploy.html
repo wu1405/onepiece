@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.sf.net">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<TITLE>代码部署系统</TITLE>
+<STYLE TYPE="text/css">
+/*
+
+	modern.css - A modern look CSS sample file
+
+	Author : Osvaldo Santana Neto <osantanabr (a) brturbo com>
+	Date   : June 2004
+	License: GPL
+
+	Part of the txt2tags project <http://txt2tags.sf.net>
+
+*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Garamond, Times, Serif;
+}
+
+div.header {
+	border-bottom: 2px solid black;
+}
+
+div.header h1 {
+	float: left;
+	margin-left: 12pt;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+div.header h2 {
+	text-align: right;
+	margin-right: 12pt;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 8pt;
+}
+
+div.header h3 {
+	text-align: right;
+	margin-right: 12pt;
+	margin-bottom: 24pt;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+div.toc {
+	float: right;
+	width: 20%;
+	padding-left: 6pt;
+	padding-right: 6pt;
+}
+
+div.toc ul {
+	padding-left: 6pt;
+}
+
+div.toc li {
+	font-size: 8pt;
+}
+
+div.toc a {
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 14px/1.2;
+	font-weight: bold;
+	color: #C00;
+	text-decoration: none;
+}
+
+div.toc a:hover {
+	text-decoration: underline;
+}
+
+div.body {
+	float: left;
+	width: 75%;
+	padding: 10px;
+	border-right: 2px dotted black;
+	text-align: justify;
+}
+
+div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6 {
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+}
+
+div.body h1 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 18pt;
+	font-size: 12pt;
+	border-left: 4px solid black;
+	border-bottom: 2px solid black;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+div.body h2 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 18pt;
+	font-size: 12pt;
+	font-weight: normal;
+	border-left: 4px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+div.body h3 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 16pt;
+	font-size: 8pt;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+div.body h4 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 16pt;
+	font-size: 8pt;
+	font-weight: normal;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+}
+
+div.body h5 {
+	width: 80%;
+	text-align: left;
+	margin-top: 6pt;
+	margin-bottom: 16pt;
+	font-size: 8pt;
+	padding: 5px;
+}
+
+
+div.body a {
+	font-family: monospace;
+	font-size: 10pt;
+	text-decoration: none;
+	color: #C00;
+}
+
+div.body a:hover {
+	text-decoration: underline;
+}
+
+div.body blockquote {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	background: #FFFFBB;
+	padding: 15px;
+}
+div.body blockquote p {
+	margin-top: 2pt;
+	margin-bottom: 2pt;
+}
+
+div.body pre {
+	background: #FFFFBB;
+	padding: 15px;
+	border: 1px dashed black;
+}
+
+div.body dt {
+	background: #BBFFBB;
+	padding: 3pt;
+	border-left: 3px solid black;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	margin-top: 18pt;
+	margin-bottom: 8pt;
+}
+
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header" ID="header">
+<H1>代码部署系统</H1>
+<H2>范余乐</H2>
+<H3>Create date: 2014/03/27 10:00   Last Update: 2014/03/28 10:30</H3>
+</DIV>
+
+<DIV CLASS="toc" ID="toc">
+  <OL>
+  <LI><A HREF="#toc1">介绍</A>
+    <UL>
+    <LI><A HREF="#toc2">1.1. 流程图</A>
+    </UL>
+  <LI><A HREF="#toc3">操作步骤</A>
+    <UL>
+    <LI><A HREF="#toc4">2.1. 登录</A>
+    <LI><A HREF="#toc5">2.2. 申请APP</A>
+    <LI><A HREF="#toc6">2.3. 配置更新信息</A>
+    <LI><A HREF="#toc7">2.4. 开始更新</A>
+    </UL>
+  <LI><A HREF="#toc8">文档历史</A>
+  </OL>
+
+</DIV>
+<DIV CLASS="body" ID="body">
+<P>
+<B>tag: code deploy system</B>
+</P>
+<A NAME="toc1"></A>
+<H1>1. 介绍</H1>
+<P>
+代码部署系统是为了提高代码部署效率，方便开发人员及时、有效的发布代码而开发的，主要功能有以下几点：
+</P>
+<UL>
+<LI>结合LDAP认证，能根据不同的开发人员，管理相对应的线上项目代码
+<LI>根据需求更新指定的版本（需配合SVN实现）
+<LI>通过用户自定义文件列表，实现对指定的文件或文件夹做更新
+<LI>支持更新后调用脚本，完成服务重启等工作
+<LI>更新日志实时显示，便于了解更新进度
+</UL>
+
+<P>
+<B>目前仅支持Chrome浏览器，因为其中的javascript脚本不兼容ie和FireFox</B>
+</P>
+<A NAME="toc2"></A>
+<H2>1.1. 流程图</H2>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_sop.jpg" BORDER="0" ALT="">
+</P>
+<A NAME="toc3"></A>
+<H1>2. 操作步骤</H1>
+<A NAME="toc4"></A>
+<H2>2.1. 登录</H2>
+<P>
+<A HREF="http://root.173ops.com/deploy/">http://root.173ops.com/deploy/</A>
+</P>
+<P>
+账号密码与登录WIFI/VPN的一致
+</P>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_login.jpg" BORDER="0" ALT="">
+</P>
+<A NAME="toc5"></A>
+<H2>2.2. 申请APP</H2>
+<P>
+第一次进入系统，会看到如下界面，不存在任何APP，需要申请：
+</P>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_applist.jpg" BORDER="0" ALT="">
+</P>
+<P>
+点击左上角的"App管理"，根据需要选择"创建App"或者"申请已有app权限"
+</P>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_appmanage.jpg" BORDER="0" ALT="">
+</P>
+<P>
+申请创建App，其中"App名称"和"项目域名"为必填项，<B>如果不用做代码发布，SVN地址可以留空</B>
+</P>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_appcreate.jpg" BORDER="0" ALT="">
+</P>
+<P>
+申请已有App权限，需要知道对应的appid
+</P>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_appapply.jpg" BORDER="0" ALT="">
+</P>
+<P>
+申请完，可以在"App申请记录"分页看到状态，另外请通知系统管理员审核申请
+</P>
+<P>
+注意事项：
+</P>
+<UL>
+<LI>项目域名部分必填，域名后不要带任何的location
+ <UL>
+ <LI>比如要申请的app是针对pay.mobogenie.com/admin的，可以这样填：App名称: admin  /  项目域名: pay.mobogenie.com
+ </UL>
+<LI>如果要用代码发布功能，SVN地址必须填写。目前支持两类地址：
+ <UL>
+ <LI>对应代码根目录的svn地址，比如：<A HREF="http://10.5.17.181/svn/product_game_tools/code/chacha/">http://10.5.17.181/svn/product_game_tools/code/chacha/</A>
+ <LI>对应war包的svn地址，比如：<A HREF="http://10.5.117.200/svn/cocapp/Java/trunk/app-server/app-server.war">http://10.5.117.200/svn/cocapp/Java/trunk/app-server/app-server.war</A>
+ </UL>
+</UL>
+
+<A NAME="toc6"></A>
+<H2>2.3. 配置更新信息</H2>
+<P>
+申请通过后，可以在“代码发布”界面看到已有的app列表，其中"修改配置"按钮可用于修改SVN地址
+</P>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_deploy.jpg" BORDER="0" ALT="">
+</P>
+<P>
+点击"更新"出现配置页面
+</P>
+<P>
+<IMG ALIGN="middle" SRC="code_deploy_config.jpg" BORDER="0" ALT="">
+</P>
+<P>
+注意事项如下：
+</P>
+<UL>
+<LI>脚本会将"代码版本库URL"中填写的svn地址中的代码，更新到"代码根目录"的位置。由于用户无法更改"代码根目录"，所以如果只想更新svn地址中某个子目录或者某个具体文件，正确的做法是将相对路径填写到"文件/目录列表"，而不是修改"代码版本库URL"。比如图中的配置表示只更新SVN中css子目录和images/xxx.jpg这个文件
+<LI>"文件/目录列表" 和 "排除列表" 可以填多条记录，用换行隔开，注意填写的路径都是相对路径（相对于"代码根目录"的路径）
+<LI>更新策略部分，如果需要选择重启服务，必须能在表格中看到"重启脚本"这一行，否则请联系系统管理员配置重启命令。没有"重启脚本"这一行，即使选择了重启服务也是无效的。
+<LI><B>代码发布系统不会对从svn检出的文件做任何修改，所以代码中的配置信息（比如数据库连接串等）请修改好后发布SVN</B>
+</UL>
+
+<A NAME="toc7"></A>
+<H2>2.4. 开始更新</H2>
+<P>
+上一步配置无误后点击"提交"，出现"确认更新信息"界面，确认后点击"开始更新"，更新进度栏会显示实时日志
+</P>
+<UL>
+<LI><B>如果长时间无日志显示，或者日志长时间处于停滞状态不刷新，请联系系统管理员</B>
+<LI>点击"开始更新"之前，可以点击"查看差异日志"按钮查看svn日志
+<P></P>
+<IMG ALIGN="middle" SRC="code_deploy_confirm.jpg" BORDER="0" ALT="">
+<P></P>
+更新脚本执行完成后，会自动跳转到日志页面。<B>如果这里看不到任何日志条目，请使用Chrome浏览器</B>
+<P></P>
+<IMG ALIGN="middle" SRC="code_deploy_sumlog.jpg" BORDER="0" ALT="">
+<P></P>
+状态栏显示了更新的汇总结果，如果有任何"error"字样，请联系系统管理员查看
+<P></P>
+"详细日志"按钮可以查看到本次更新的具体日志，如果其中有发现ERROR或者CRITICAL级别的日志，请联系系统管理员查看
+</UL>
+
+<A NAME="toc8"></A>
+<H1>3. 文档历史</H1>
+<TABLE BORDER="1">
+<TR>
+<TD>1</TD>
+<TD>文档创建</TD>
+<TD>20140327</TD>
+</TR>
+</TABLE>
+
+</DIV>
+
+<!-- html code generated by txt2tags 2.3 (http://txt2tags.sf.net) -->
+<!-- cmdline: txt2tags -t html D:/flyup/Desktop/code_deploy.t2t -->
+</BODY></HTML>

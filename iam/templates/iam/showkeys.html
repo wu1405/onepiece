@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load bootstrap_toolkit %}
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'iam/sidebar.html' %}
+{% endblock %}
+
+{% block body %}
+
+    <ul class="nav nav-tabs">
+        <h3>Keys List</h3><br>
+            <strong>{{ message }}</strong>
+    </ul>
+
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>account_id</th>
+            <th>access_key_id</th>
+            <th>access_key</th>
+            <th>操作</th>
+        </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.account_id }}</td>
+                <td>{{ result.access_key_id }}</td>
+                <td>{{ result.access_key }}</td>
+                <td><a href='/iam/delete/?account={{result.account_id}}'>删除</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

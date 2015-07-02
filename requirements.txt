@@ -1,0 +1,19 @@
+# Django
+Django==1.6.5
+MySQL-python==1.2.5
+django-redis==3.7.0
+django-grappelli==2.5.3
+django-bootstrap-toolkit==2.15.0
+xmltodict==0.9.0
+python-dateutil==2.2
+django-auth-ldap==1.2.0
+python-ldap==2.4.19
+boto==2.38.0
+pymongo==3.0.2
+jsonpickle==0.9.2
+#mongoengie
+mongoengine==0.9.0
+#djangorestframework
+djangorestframework==3.0.5
+#django-rest-framework-mongoengine
+django-rest-framework-mongoengine==2.0.2

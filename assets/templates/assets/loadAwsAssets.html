@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load bootstrap_toolkit %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'assets/sidebar.html' %}
+{% endblock %}
+
+
+{% block body %}
+    <h3>{{ title }}</h3>
+
+    <div class="well">
+        <div id="id_form">
+            <form enctype="multipart/form-data" class="form-horizontal" action="" method="post">
+                {% csrf_token %}
+                {{ form|as_bootstrap:"horizontal" }}
+                <p class="form-actions">
+                    <button id="id_submit" class="btn btn-primary" type="submit">submit</button>
+                    <a href="/curd/list">
+                        <button class="btn" type="button">return</button>
+                    </a>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

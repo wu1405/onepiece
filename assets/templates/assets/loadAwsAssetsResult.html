@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap_toolkit %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'assets/sidebar.html' %}
+{% endblock %}
+
+{% block body %}
+    <h3>{{ title }}</h3>
+
+    <div class="well">
+        <h4>Total Record:{{ results.total_record }}</h4>
+        <h4>Modified Count:{{ results.modified_count }}</h4>
+        <h4>Error Count Record:{{ results.error_count }}</h4>
+    </div>
+    </div>
+{% endblock %}

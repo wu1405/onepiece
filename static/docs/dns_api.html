@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.sf.net">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<TITLE>Dns Api 说明文档</TITLE>
+<STYLE TYPE="text/css">
+/*
+
+	modern.css - A modern look CSS sample file
+
+	Author : Osvaldo Santana Neto <osantanabr (a) brturbo com>
+	Date   : June 2004
+	License: GPL
+
+	Part of the txt2tags project <http://txt2tags.sf.net>
+
+*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Garamond, Times, Serif;
+}
+
+div.header {
+	border-bottom: 2px solid black;
+}
+
+div.header h1 {
+	float: left;
+	margin-left: 12pt;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+div.header h2 {
+	text-align: right;
+	margin-right: 12pt;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 8pt;
+}
+
+div.header h3 {
+	text-align: right;
+	margin-right: 12pt;
+	margin-bottom: 24pt;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+div.toc {
+	float: right;
+	width: 20%;
+	padding-left: 6pt;
+	padding-right: 6pt;
+}
+
+div.toc ul {
+	padding-left: 6pt;
+}
+
+div.toc li {
+	font-size: 8pt;
+}
+
+div.toc a {
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 14px/1.2;
+	font-weight: bold;
+	color: #C00;
+	text-decoration: none;
+}
+
+div.toc a:hover {
+	text-decoration: underline;
+}
+
+div.body {
+	float: left;
+	width: 75%;
+	padding: 10px;
+	border-right: 2px dotted black;
+	text-align: justify;
+}
+
+div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6 {
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+}
+
+div.body h1 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 18pt;
+	font-size: 12pt;
+	border-left: 4px solid black;
+	border-bottom: 2px solid black;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+div.body h2 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 18pt;
+	font-size: 12pt;
+	font-weight: normal;
+	border-left: 4px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+div.body h3 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 16pt;
+	font-size: 8pt;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+div.body h4 {
+	text-align: left;
+	margin-top: 24pt;
+	margin-bottom: 16pt;
+	font-size: 8pt;
+	font-weight: normal;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+}
+
+div.body h5 {
+	width: 80%;
+	text-align: left;
+	margin-top: 6pt;
+	margin-bottom: 16pt;
+	font-size: 8pt;
+	padding: 5px;
+}
+
+
+div.body a {
+	font-family: monospace;
+	font-size: 10pt;
+	text-decoration: none;
+	color: #C00;
+}
+
+div.body a:hover {
+	text-decoration: underline;
+}
+
+div.body blockquote {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	background: #FFFFBB;
+	padding: 15px;
+}
+div.body blockquote p {
+	margin-top: 2pt;
+	margin-bottom: 2pt;
+}
+
+div.body pre {
+	background: #FFFFBB;
+	padding: 15px;
+	border: 1px dashed black;
+}
+
+div.body dt {
+	background: #BBFFBB;
+	padding: 3pt;
+	border-left: 3px solid black;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	margin-top: 18pt;
+	margin-bottom: 8pt;
+}
+
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header" ID="header">
+<H1>Dns Api 说明文档</H1>
+<H2>范余乐</H2>
+<H3>Create date: 2014/07/08 10:00   Last Update: 2014/07/14 11:12</H3>
+</DIV>
+
+<DIV CLASS="toc" ID="toc">
+  <OL>
+  <LI><A HREF="#toc1">接口URL</A>
+  <LI><A HREF="#toc2">查询</A>
+  <LI><A HREF="#toc3">添加/删除</A>
+  <LI><A HREF="#toc4">注意事项</A>
+  <LI><A HREF="#toc5">文档历史</A>
+  </OL>
+
+</DIV>
+<DIV CLASS="body" ID="body">
+<P>
+<B>tag: dns api</B>
+</P>
+<A NAME="toc1"></A>
+<H1>1. 接口URL</H1>
+<PRE>
+http://root.173ops.com/dns/api/v1/records/
+</PRE>
+<P></P>
+<A NAME="toc2"></A>
+<H1>2. 查询</H1>
+<PRE>
+http://root.173ops.com/dns/api/v1/records/${域名或者IP}/
+</PRE>
+<P></P>
+<UL>
+<LI>默认查询主控dns：10.5.17.80，view：OFC_FZ(电信的view)
+<LI>只有10.5.17.80有区分view，查询其他dns服务器不需要指定view
+<LI>结果中，A字段对应A记录; CNAME字段对应CNAME记录; PTR字段对应PTR记录(反向解析);
+</UL>
+
+<P>
+<A HREF="http://root.173ops.com/dns/api/v1/records/flyup1.internal.mobogenie.com/view/OFC_BJ/">http://root.173ops.com/dns/api/v1/records/flyup1.internal.mobogenie.com/view/OFC_BJ/</A>
+</P>
+<PRE>
+#指定查询联通的view: OFC_BJ
+{
+    "A": [
+        "3.3.3.3"
+    ], 
+    "source": "flyup1.internal.mobogenie.com", 
+    "host": "10.5.17.80", 
+    "CNAME": [
+        "flyup.internal.mobogenie.com"
+    ], 
+    "view": "OFC_BJ"
+}
+</PRE>
+<P></P>
+<P>
+<A HREF="http://root.173ops.com/dns/api/v1/records/10.59.74.46/">http://root.173ops.com/dns/api/v1/records/10.59.74.46/</A>
+</P>
+<PRE>
+#查询ip反向解析记录
+{
+    "source": "10.59.74.46", 
+    "host": "10.5.17.80", 
+    "PTR": [
+        "flyup.173ops.com"
+    ], 
+    "view": "OFC_FZ"
+}
+</PRE>
+<P></P>
+<P>
+<A HREF="http://root.173ops.com/dns/api/v1/records/i1.mobogenie.itc.cn/host/10.59.96.251/">http://root.173ops.com/dns/api/v1/records/i1.mobogenie.itc.cn/host/10.59.96.251/</A>
+</P>
+<PRE>
+#查询指定的dns服务器10.59.96.251
+{
+    "A": [
+        "10.59.96.154", 
+        "10.59.96.23"
+    ], 
+    "source": "i1.mobogenie.itc.cn", 
+    "host": "10.59.96.251", 
+    "CNAME": [
+        "imagespool.mobogenie.com"
+    ], 
+    "view": null
+}
+</PRE>
+<P></P>
+<A NAME="toc3"></A>
+<H1>3. 添加/删除</H1>
+<PRE>
+http://root.173ops.com/dns/api/v1/records/
+</PRE>
+<P></P>
+<UL>
+<LI>请求参数如下，通过POST(添加记录)或DELETE(删除记录)方法提交
+ <UL>
+ <LI>source 源地址。可以填域名或IP
+ <LI>target 目标地址。添加A记录则填IP，添加CNAME或者PTR记录填域名
+ <LI>host 指定NS服务器IP，默认10.5.17.80
+ <LI>view 指定view名(OFC_FZ或者OFC_BJ)，只在host是10.5.17.80时有效
+ </UL>
+<LI>认证方法，根据请求源IP认证
+ <UL>
+ <LI>源ip是10.59.95.5/10.59.96.227可以做任何操作
+ <LI>源ip是其他，只能操作修改本机ip对应的PTR(反向解析)记录
+ </UL>
+</UL>
+
+<PRE>
+#查询
+curl http://root.173ops.com/dns/api/v1/records/10.59.74.46/
+#结果如下，有一个PTR记录
+{"source": "10.59.74.46", "host": "10.5.17.80", "PTR": ["flyup1.dev.173ops.com"], "view": "OFC_FZ"}
+
+#在10.59.74.46本机上修改记录，将PTR记录修改为flyup10.dev.173ops.com
+curl -X DELETE -d "source=10.59.74.46&amp;target=flyup1.dev.173ops.com" http://root.173ops.com/dns/api/v1/records/
+curl -X POST -d "source=10.59.74.46&amp;target=flyup10.dev.173ops.com" http://root.173ops.com/dns/api/v1/records/ 
+
+#再次查询
+curl http://root.173ops.com/dns/api/v1/records/10.59.74.46/
+#结果
+{"source": "10.59.74.46", "host": "10.5.17.80", "PTR": ["flyup10.dev.173ops.com"], "view": "OFC_FZ"}
+
+
+#如果在非10.59.74.46的机子上操作，会返回HTTP 401错误，结果如下
+{"source": "10.59.74.46", "host": "10.5.17.80", "error": "Unauthorized access.", "view": "OFC_FZ"}
+</PRE>
+<P></P>
+<A NAME="toc4"></A>
+<H1>4. 注意事项</H1>
+<UL>
+<LI>下列zone是有分电信(OFC_FZ)和联通(OFC_BJ)两个view的，api默认操作的是OFC_FZ的view，要操作联通的dns要指定view为OFC_BJ
+<PRE>
+173ops.com  
+internal.mobogenie.com  
+internal.mobogenieie.com  
+internal.shouyou.com  
+internal.yeyou.com
+</PRE>
+<P></P>
+<LI>关于记录生效的问题，由于view的区分，默认操作只在10.5.17.80上生效，如果要同步到线上的dns服务器，要重启10.5.17.80的dns服务
+</UL>
+
+<A NAME="toc5"></A>
+<H1>5. 文档历史</H1>
+<TABLE BORDER="1">
+<TR>
+<TD>1</TD>
+<TD>文档创建</TD>
+<TD>2014/07/08</TD>
+</TR>
+<TR>
+<TD>2</TD>
+<TD>修改认证方法为IP认证</TD>
+<TD>2014/07/10</TD>
+</TR>
+</TABLE>
+
+</DIV>
+
+<!-- html code generated by txt2tags 2.3 (http://txt2tags.sf.net) -->
+<!-- cmdline: txt2tags -t html D:/flyup/Desktop/dns_api.t2t -->
+</BODY></HTML>

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load bootstrap_toolkit %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'reserved/sidebar.html' %}
+{% endblock %}
+
+
+{% block body %}
+<link  type="text/css" href="/static/Reserved/bootstrap-2.3.2/bootstrap.min.css" rel="stylesheet">
+<link  type="text/css" href="/static/Reserved/bootstrap-2.3.2/bootstrap-responsive.min.css" rel="stylesheet">
+
+<div style="margin:0 auto;text-align:center;padding-top:20px;">
+<strong>{{ rs }}</strong><br>
+<strong>{{ rs2 }}</strong>
+
+</div>
+
+<div style="margin:0 auto;text-align:center;padding-top:20px;">
+    <a href="/reserved/ri/showtable/" class="btn btn-primary btn-lg active" role="button">Go back to the RI page</a>
+<!--We have multi accounts.voga is one of it -->
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+<div class="well sidebar-nav">
+    <ul class="nav nav-list">
+        <li class="nav-header">可选操作</li>
+        <li><a href="/curd/create/">新建用户</a></li>
+        {% if request.user.is_superuser %}
+        {% endif %}
+    </ul>
+</div>

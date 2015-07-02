@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %}
+{% load bootstrap_toolkit %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'billing/sidebar.html' %}
+{% endblock %}
+
+
+{% block body %}
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<strong>result:</strong>{{ result }}
+</body>
+{% endblock %}
+</html>

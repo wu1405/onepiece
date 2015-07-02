@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'assets/sidebar.html' %}
+{% endblock %}
+
+{% block body %}
+
+    <head>
+
+        <link href="{% static  'assets/css/jquery.dynatable.css' %}" rel="stylesheet"/>
+        <link href="{% static 'assets/css/jquery-ui.css' %}" rel="stylesheet">
+        <script src="{% static 'assets/js/jquery-ui.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.dynatable.js' %}"></script>
+
+
+        <script>
+
+            $(document).ready(function () {
+                $('#dynatable').dynatable({
+                    dataset: {
+                        ajax: true,
+                        ajaxUrl: '/assets/fetchAll/',
+                        ajaxOnLoad: true,
+                        records: [],
+                        perPageDefault: 10,
+                        perPageOptions: [10, 20, 50, 100]
+                    },
+                    table: {
+                        defaultColumnIdStyle: 'camelCase',
+                        columns: null
+                    },
+                    features: {
+                        search: true,
+                        perPageSelect: true
+                    }
+
+                });
+
+
+            });
+
+            $(function () {
+                var dialog, form;
+                dialog = $('#dialog-form').dialog({
+                    autoOpen: false,
+                    height: 300,
+                    width: 350,
+                    modal: true,
+                    buttons: {
+                        Close: function () {
+                            dialog.dialog("close");
+
+                        }
+                    },
+                    close: function () {
+                        $('#display-column-form').submit();
+                    }
+                });
+
+
+                $("#popup-dialog-btn").button().on("click", function () {
+                    dialog.dialog("open");
+                });
+            });
+        </script>
+
+    </head>
+
+    <ul class="nav nav-tabs">
+        <img src="{% static 'assets/img/configure.png' %}" id="popup-dialog-btn" class="form-search pull-right"
+             title="Show/Hide Columns" style="cursor:pointer"/>
+    </ul>
+
+    <body>
+
+    <table id="dynatable" class="table table-bordered">
+        <thead>
+        {% for col in cols %}
+            <th>{{ col }}</th>
+        {% endfor %}
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <div id="dialog-form" title="Show/Hide Columns" class="position: relative;display: block; zoom:1;overflow: auto">
+        <table>
+
+            <form id="display-column-form" method="get">
+                <fieldset>
+                    {% for cl in allColumns %}
+                        <tr>
+                            <td>
+                                {% if cl in cols %}
+                                    <input type="checkbox" name="{{ cl }}" id="{{ cl }}" checked/>
+                                {% else %}
+                                    <input type="checkbox" name="{{ cl }}" id="{{ cl }}"/>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <label>{{ cl }}</label>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+                </fieldset>
+            </form>
+        </table>
+    </div>
+    </body>
+
+{% endblock %}
